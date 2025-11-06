@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.sidebar {
+  background-color: $black-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  &__link:hover {
+    opacity: 1;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

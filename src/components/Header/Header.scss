@@ -1,0 +1,32 @@
+@use "../../styles/variables" as *;
+
+.header {
+  background-color: $black-color;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  &__logo {
+    width: 190px;
+  }
+
+  &__nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__link {
+    display: block;
+    padding: 5px;
+    font-size: 18px;
+    color: #FFF;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color .3s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
