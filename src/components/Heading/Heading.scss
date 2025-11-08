@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.heading {
+  &__title {
+    font-size: 37px;
+    font-weight: 500;
+    margin-bottom: 25px;
+
+    strong {
+      color: $primary-color;
+    }
+  }
+}
