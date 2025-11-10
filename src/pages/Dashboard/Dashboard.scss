@@ -1,3 +1,24 @@
 .dashboard {
-    
+  display: flex;
+  flex-direction: column;
+  gap: 40px 20px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+  }
+
+  &__card {
+    position: relative;
+    padding: 20px;
+    background-color: #FBFBFB;
+  }
+
+  &__title {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 16px;
+  }
 }

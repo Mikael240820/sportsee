@@ -1,0 +1,16 @@
+.chart-activity {
+  .recharts-legend-wrapper .recharts-default-legend {
+    margin-bottom: 60px !important;
+    margin-right: 20px !important;
+
+    .recharts-legend-item-text {
+      font-size: 12px;
+      fill: #9B9EAC;
+    }
+  }
+
+  .recharts-cartesian-axis-tick-label tspan {
+    font-size: 12px;
+    fill: #9B9EAC;
+  }
+}

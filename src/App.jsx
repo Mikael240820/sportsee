@@ -4,13 +4,15 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="dashboard">
-      <Header />
-      <Sidebar />
-      <main className="main-content">
-        <Dashboard />
-      </main>
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <Sidebar />
+        <main className="main-content">
+          <Dashboard />
+        </main>
+      </div>
+    </>
   );
 }
 
