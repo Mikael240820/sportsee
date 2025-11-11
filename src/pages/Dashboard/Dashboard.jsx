@@ -2,6 +2,8 @@ import Heading from "../../components/Heading/Heading";
 import useUserData from "../../hooks/useUserData";
 import useUserActivity from "../../hooks/useUserActivity";
 import ChartActivity from "../../components/ChartActivity/ChartActivity";
+import useUserSessions from "../../hooks/useUserSessions";
+import ChartSessions from "../../components/ChartSessions/ChartSessions";
 import "./Dashboard.scss";
 
 function Dashboard() {
@@ -9,10 +11,12 @@ function Dashboard() {
   const userId = 12;
   const { user, loading: userLoading, error: userError } = useUserData(userId);
   const { userActivity, loading: activityLoading, error: activityError } = useUserActivity(userId);
+  const { userSessions, loading: sessionsLoading, error: sessionsError } = useUserSessions(userId);
 
   // Gestion des erreurs
   if (userError) return <div>Erreur utilisateur : {userError}</div>;
   if (activityError) return <div>Erreur d'activité : {activityError}</div>;
+  if (sessionsError) return <div>Erreur de sessions : {sessionsError}</div>;
 
   return (
     <article className="dashboard">
@@ -40,7 +44,14 @@ function Dashboard() {
           <div className="dashboard__card">...</div>
         </div>
         <div className="dashboard__card-container">
-          <div className="dashboard__card dashboard__card--full dashboard__card--primary">...</div>
+          {sessionsLoading ? (
+            <div>Chargement...</div>
+          ) : (
+            <div className="dashboard__card dashboard__card--full dashboard__card--primary">
+              <h2 className="dashboard__title dashboard__title--sessions">Durée moyenne des sessions</h2>
+              <ChartSessions data={userSessions} />
+            </div>
+          )}
           <div className="dashboard__card dashboard__card--full dashboard__card--gray">...</div>
           <div className="dashboard__card">...</div>
         </div>

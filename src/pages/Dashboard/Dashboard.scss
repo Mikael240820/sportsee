@@ -54,5 +54,12 @@
     top: 20px;
     left: 30px;
     font-size: 16px;
+
+    &--sessions {
+      left: 20px;
+      max-width: 165px;
+      font-size: 13px;
+      color: #FF9494;
+    }
   }
 }
