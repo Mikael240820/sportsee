@@ -33,6 +33,17 @@ function Dashboard() {
             <ChartActivity data={userActivity} />
           </div>
         )}
+        <div className="dashboard__card-column">
+          <div className="dashboard__card">...</div>
+          <div className="dashboard__card">...</div>
+          <div className="dashboard__card">...</div>
+          <div className="dashboard__card">...</div>
+        </div>
+        <div className="dashboard__card-container">
+          <div className="dashboard__card dashboard__card--full dashboard__card--primary">...</div>
+          <div className="dashboard__card dashboard__card--full dashboard__card--gray">...</div>
+          <div className="dashboard__card">...</div>
+        </div>
       </div>
     </article>
   );

@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -6,17 +8,49 @@
   &__container {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
     gap: 20px;
+  }
+
+  &__card-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__card-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: 2;
+    grid-row: 1 / -1;
   }
 
   &__card {
     position: relative;
     padding: 20px;
     background-color: #FBFBFB;
+    flex: 1;
+
+    &--full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 4px;
+    }
+
+    &--primary {
+      background: linear-gradient(to right, $primary-color 70%, #D60D0D 70%);
+    }
+
+    &--gray {
+      background-color: $dark-gray-color;
+    }
   }
 
   &__title {
     position: absolute;
+    z-index: 1;
     top: 20px;
     left: 30px;
     font-size: 16px;
