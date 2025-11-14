@@ -39,6 +39,13 @@
       border-radius: 4px;
     }
 
+    &--centered {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 30px;
+    }
+
     &--primary {
       background: linear-gradient(to right, $primary-color 70%, #D60D0D 70%);
     }

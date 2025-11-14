@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+
+  &__text {
+    font-size: 22px;
+    font-weight: 700;
+    color: $dark-gray-color;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+    color: $gray-color;
+  }
+}

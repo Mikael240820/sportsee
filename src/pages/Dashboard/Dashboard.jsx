@@ -7,6 +7,7 @@ import ChartSessions from "../../components/ChartSessions/ChartSessions";
 import ChartPerformance from "../../components/ChartPerformance/ChartPerformance";
 import useUserPerformance from "../../hooks/useUserPerformance";
 import ChartScore from "../../components/ChartScore/ChartScrore";
+import Info from "../../components/Info/Info";
 import "./Dashboard.scss";
 
 function Dashboard() {
@@ -43,10 +44,24 @@ function Dashboard() {
           </div>
         )}
         <div className="dashboard__card-column">
-          <div className="dashboard__card">...</div>
-          <div className="dashboard__card">...</div>
-          <div className="dashboard__card">...</div>
-          <div className="dashboard__card">...</div>
+          {userLoading ? (
+            <div>Chargement...</div>
+          ) : (
+            <>
+            <div className="dashboard__card dashboard__card--centered">
+              <Info title="Calories" text={`${user.keyData.calorieCount}kCal`} icon="/assets/icons/energy.svg" color="red" />
+            </div>
+            <div className="dashboard__card dashboard__card--centered">
+              <Info title="Proteines" text={`${user.keyData.proteinCount}g`} icon="/assets/icons/chicken.svg" color="blue" />
+            </div>
+            <div className="dashboard__card dashboard__card--centered">
+              <Info title="Glucides" text={`${user.keyData.carbohydrateCount}g`} icon="/assets/icons/apple.svg" color="yellow" />
+            </div>
+            <div className="dashboard__card dashboard__card--centered">
+              <Info title="Lipides" text={`${user.keyData.lipidCount}g`} icon="/assets/icons/cheeseburger.svg" color="pink" />
+            </div>
+            </>
+          )}
         </div>
         <div className="dashboard__card-container">
           {sessionsLoading ? (
