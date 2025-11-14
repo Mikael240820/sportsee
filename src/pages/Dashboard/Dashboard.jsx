@@ -6,6 +6,7 @@ import useUserSessions from "../../hooks/useUserSessions";
 import ChartSessions from "../../components/ChartSessions/ChartSessions";
 import ChartPerformance from "../../components/ChartPerformance/ChartPerformance";
 import useUserPerformance from "../../hooks/useUserPerformance";
+import ChartScore from "../../components/ChartScore/ChartScrore";
 import "./Dashboard.scss";
 
 function Dashboard() {
@@ -63,7 +64,14 @@ function Dashboard() {
               <ChartPerformance data={userPerformance} />
             </div>
           )}
-          <div className="dashboard__card">...</div>
+          {userLoading ? (
+            <div>Chargement...</div>
+          ) : (
+            <div className="dashboard__card">
+              <h2 className="dashboard__title dashboard__title--score">Score</h2>
+              <ChartScore data={user.todayScore} />
+            </div>
+          )}
         </div>
       </div>
     </article>
