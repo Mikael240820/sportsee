@@ -1,5 +1,8 @@
+import { mockData } from '../data/apiMock.js';
+
 // Configuration
 const API_BASE = 'http://localhost:3000';
+const USE_MOCK = true;
 
 /**
  * Standardise les données de l'API pour unifier les schémas différents.
@@ -29,10 +32,16 @@ const standardizeData = (data, type) => {
  * @returns {Promise<Object>} Les données utilisateur standardisées
  */
 export const getUser = async (userId) => {
-  const response = await fetch(`${API_BASE}/user/${userId}`);
-  if (!response.ok) throw new Error('Échec de récupération de l\'utilisateur !');
-  const data = await response.json();
-  return standardizeData(data, 'user');
+  if (USE_MOCK) {
+    const data = mockData.user[userId];
+    if (!data) throw new Error('Échec de récupération de l\'utilisateur !');
+    return standardizeData(data, 'user');
+  } else {
+    const response = await fetch(`${API_BASE}/user/${userId}`);
+    if (!response.ok) throw new Error('Échec de récupération de l\'utilisateur !');
+    const data = await response.json();
+    return standardizeData(data, 'user');
+  }
 };
 
 /**
@@ -42,10 +51,16 @@ export const getUser = async (userId) => {
  * @returns {Promise<Object>} Les données d'activité
  */
 export const getUserActivity = async (userId) => {
-  const response = await fetch(`${API_BASE}/user/${userId}/activity`);
-  if (!response.ok) throw new Error('Échec de récupération de l\'activité !');
-  const data = await response.json();
-  return standardizeData(data, 'activity');
+  if (USE_MOCK) {
+    const data = mockData.activity[userId];
+    if (!data) throw new Error('Échec de récupération de l\'activité !');
+    return standardizeData(data, 'activity');
+  } else {
+    const response = await fetch(`${API_BASE}/user/${userId}/activity`);
+    if (!response.ok) throw new Error('Échec de récupération de l\'activité !');
+    const data = await response.json();
+    return standardizeData(data, 'activity');
+  }
 };
 
 /**
@@ -55,10 +70,16 @@ export const getUserActivity = async (userId) => {
  * @returns {Promise<Object>} Les données des sessions moyennes
  */
 export const getUserAverageSessions = async (userId) => {
-  const response = await fetch(`${API_BASE}/user/${userId}/average-sessions`);
-  if (!response.ok) throw new Error('Échec de récupération des sessions moyennes !');
-  const data = await response.json();
-  return standardizeData(data, 'averageSessions');
+  if (USE_MOCK) {
+    const data = mockData.averageSessions[userId];
+    if (!data) throw new Error('Échec de récupération des sessions moyennes !');
+    return standardizeData(data, 'averageSessions');
+  } else {
+    const response = await fetch(`${API_BASE}/user/${userId}/average-sessions`);
+    if (!response.ok) throw new Error('Échec de récupération des sessions moyennes !');
+    const data = await response.json();
+    return standardizeData(data, 'averageSessions');
+  }
 };
 
 /**
@@ -68,8 +89,14 @@ export const getUserAverageSessions = async (userId) => {
  * @returns {Promise<Object>} Les données de performances
  */
 export const getUserPerformance = async (userId) => {
-  const response = await fetch(`${API_BASE}/user/${userId}/performance`);
-  if (!response.ok) throw new Error('Échec de récupération des performances !');
-  const data = await response.json();
-  return standardizeData(data, 'performance');
+  if (USE_MOCK) {
+    const data = mockData.performance[userId];
+    if (!data) throw new Error('Échec de récupération des performances !');
+    return standardizeData(data, 'performance');
+  } else {
+    const response = await fetch(`${API_BASE}/user/${userId}/performance`);
+    if (!response.ok) throw new Error('Échec de récupération des performances !');
+    const data = await response.json();
+    return standardizeData(data, 'performance');
+  }
 };
