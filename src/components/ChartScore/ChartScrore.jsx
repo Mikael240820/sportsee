@@ -10,7 +10,8 @@ function ChartScore({ data }) {
 
   return (
     <div className="chart-score">
-      <PieChart width={240} height={230}>
+      <PieChart width={240} height={220}>
+        <circle cx="120" cy="110" r="93.5" fill="#FFFFFF" />
         <Pie data={pieData} innerRadius="85%" outerRadius="100%" cornerRadius="50%" paddingAngle={5} startAngle={90} />
         <text x="50%" y="43%" textAnchor="middle" dominantBaseline="middle" fontSize="30" fontWeight="bold" fill="#282D30">
           {Math.round(score * 100)}%

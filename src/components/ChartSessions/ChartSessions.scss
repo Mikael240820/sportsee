@@ -3,4 +3,12 @@
     font-size: 12px;
     fill: #9B9EAC;
   }
+
+  &--bg-hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(214, 13, 13, .5);
+  }
 }

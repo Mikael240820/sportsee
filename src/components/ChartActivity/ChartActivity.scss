@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .chart-activity {
   .recharts-legend-wrapper .recharts-default-legend {
     margin-bottom: 60px !important;
@@ -12,5 +14,16 @@
   .recharts-cartesian-axis-tick-label tspan {
     font-size: 12px;
     fill: #9B9EAC;
+  }
+
+  &__tooltip {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: $primary-color;
+    color: #FFFFFF;
   }
 }

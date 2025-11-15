@@ -18,9 +18,10 @@ function ChartPerformance({ data }) {
 
   return (
     <div className="chart-performance">
-      <RadarChart width={240} height={230} data={transformedData} margin={{ top: 20, left: 20, right: 20, bottom: 20 }}>
-        <PolarGrid />
+      <RadarChart width={240} height={220} data={transformedData} margin={{ left: 5, right: 5 }}>
+        <PolarGrid radialLines={false} />
         <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis tickCount={6} axisLine={false} tickLine={false} tick={false} />
         <Radar dataKey="value" stroke="transparent" fill="#FF0000" fillOpacity={0.8} />
       </RadarChart>
     </div>

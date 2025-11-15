@@ -47,7 +47,7 @@
     }
 
     &--primary {
-      background: linear-gradient(to right, $primary-color 70%, #D60D0D 70%);
+      background-color: $primary-color;
     }
 
     &--gray {
