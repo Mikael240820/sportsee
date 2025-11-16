@@ -8,11 +8,14 @@ import ChartPerformance from "../../components/ChartPerformance/ChartPerformance
 import useUserPerformance from "../../hooks/useUserPerformance";
 import ChartScore from "../../components/ChartScore/ChartScrore";
 import Info from "../../components/Info/Info";
+import { useParams } from "react-router-dom";
 import "./Dashboard.scss";
 
 function Dashboard() {
-  // Tests possibles avec userId 12 ou 18
-  const userId = 12;
+  // Tests possibles avec id 12 ou 18
+  const { id } = useParams();
+  const userId = id ?? 12;
+
   const { user, loading: userLoading, error: userError } = useUserData(userId);
   const { userActivity, loading: activityLoading, error: activityError } = useUserActivity(userId);
   const { userSessions, loading: sessionsLoading, error: sessionsError } = useUserSessions(userId);

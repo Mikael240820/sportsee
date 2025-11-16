@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -9,7 +10,9 @@ function App() {
         <Header />
         <Sidebar />
         <main className="main-content">
-          <Dashboard />
+          <Routes>
+            <Route path="/:id?" element={<Dashboard />} />
+          </Routes>
         </main>
       </div>
     </>
